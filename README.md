@@ -1,2 +1,4 @@
 # CS50-CS50AI
-The compilation of all CS50 &amp; CS50AI Projects
+The compilation of all CS50 & CS50AI Projects
+
+This repo contains all projects from Harvard's CS50 course.

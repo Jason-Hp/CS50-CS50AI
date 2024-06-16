@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+                let correct = document.querySelector('#correct');
+                correct.addEventListener('click', function(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('.lol').innerHTML = "Correct";
+                });
+                let wrong = document.querySelectorAll('.wrong');
+
+                for (let i = 0; i< wrong.length; i++)
+                {
+                wrong[i].addEventListener('click', function(){
+                    wrong[i].style.backgroundColor = 'red';
+                    document.querySelector('.lol').innerHTML = "Wrong";
+                });
+                }
+
+                let ans = document.querySelector('#boo');
+                let coo = document.querySelector('#bat');
+                coo.addEventListener('click', function(){
+                    if (ans.value == "eight")
+                    {
+                        ans.style.backgroundColor = 'green';
+                        document.querySelector('#wah').innerHTML = "Correct";
+
+                    }
+                    else
+                    {
+                        ans.style.backgroundColor = 'red';
+                        document.querySelector('#wah').innerHTML = "Wrong";
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                    <h3>What is 1 + 1?</h3>
+                    <button class = "wrong">1</button>
+                    <button id = "correct">2</button>
+                    <button class = "wrong">3</button>
+                    <p class = "lol"></p>
+                </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Spell the number 8</h3>
+                <input id = "boo"></input>
+                <button id = "bat">Submit</button>
+                <p id = "wah"></p>
+            </div>
+        </div>
+    </body>
+</html>

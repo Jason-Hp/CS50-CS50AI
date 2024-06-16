@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <center>
+
+        <h2>All Stocks</h2>
+        <table class = "gfg">
+            <head>
+                <tr>
+                    <th>Stock</th>
+                    <th>No.</th>
+                    <th>Price</th>
+                    <th>Share Total</th>
+                    <th>Cash</th>
+                    <th>Total</th>
+                </tr>
+            </head>
+        </table>
+        <table class = "gfg">
+            <body>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+
+                {% for row in rows %}
+                    <tr>
+                    <td class = "geeks">{{ row["symbol"] }}</td>
+                    <td>{{ row["share"] }}</td>
+                    <td>{{ row["price"] | usd }}</td>
+                    <td>{{ row["total"] | usd }}</td>
+                    <td>{{ current[0]["cash"] | usd }}</td>
+                    <td>{{ jes | usd }}</td>
+                </tr>
+                {% endfor %}
+
+            </body>
+        </table>
+    </center>
+{% endblock %}

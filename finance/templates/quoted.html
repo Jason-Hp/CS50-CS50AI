@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{name}}
+{% endblock %}
+
+{% block main %}
+    <h2>{{bro["name"]}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Price </th>
+                <th> Symbol </th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+
+                <tr>
+                    <td> {{ bro["name"] }} </td>
+                    <td> {{ bro["price"] | usd }} </td>
+                    <td> {{ bro["symbol"] }} </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+{% endblock %}

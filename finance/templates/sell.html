@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BUY
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <select name="symbol">
+            <option disabled selected value="">Select</option>
+            {% for lol in elol %}
+                <option value='{{ lol["symbol"] }}'>{{ lol["symbol"] }}</option>
+            {% endfor %}
+        </select>
+        <input autocomplete="off" autofocus name="shares" placeholder="No. of Shares" type="text" >
+        <button type="submit" value="Sell">Sell</button>
+    </form>
+{% endblock %}
